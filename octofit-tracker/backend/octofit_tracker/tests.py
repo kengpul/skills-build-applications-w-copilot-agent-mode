@@ -2,6 +2,8 @@
 from django.test import TestCase
 from .models import User, Team, Activity, Leaderboard, Workout
 
+# This script populates test data for the octofit_db database.
+
 class UserModelTest(TestCase):
     def test_create_user(self):
         user = User.objects.create(email='test@example.com', name='Test User', password='testpass')
