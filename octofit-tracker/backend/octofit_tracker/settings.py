@@ -136,3 +136,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['*']
+
+# Codespace Django REST API endpoint suffix for use in views or other modules
+CODESPACE_API_BASE = "https://glowing-space-xylophone-wx455qrrqghjp5-8000.app.github.dev/api/"
