@@ -1,5 +1,7 @@
 # Views for users, teams, activity, leaderboard, and workouts collections
 from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from .models import User, Team, Activity, Leaderboard, Workout
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 
@@ -22,3 +24,14 @@ class LeaderboardViewSet(viewsets.ModelViewSet):
 class WorkoutViewSet(viewsets.ModelViewSet):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
+
+@api_view(['GET'])
+def api_root(request, format=None):
+    base_url = 'https://glowing-space-xylophone-wx455qrrqghjp5-8000.app.github.dev/'
+    return Response({
+        'users': base_url + 'api/users/?format=api',
+        'teams': base_url + 'api/teams/?format=api',
+        'activity': base_url + 'api/activity/?format=api',
+        'leaderboard': base_url + 'api/leaderboard/?format=api',
+        'workouts': base_url + 'api/workouts/?format=api'
+    })

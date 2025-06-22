@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Run Django server on 0.0.0.0:8000",
+			"command": "python manage.py runserver 0.0.0.0:8000",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc"
+			]
+		}
+	]
+}
